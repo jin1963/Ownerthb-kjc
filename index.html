@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Owner Admin Panel - THBC → KJC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Owner Admin Panel</h1>
+
+    <button id="btnConnect">Connect (Owner only)</button>
+    <p id="ownerStatus" class="muted">Not Connected</p>
+
+    <h2>Contract Info</h2>
+    <p>THBC in contract: <span id="thbcIn">0</span></p>
+    <p>KJC locked total: <span id="kjcLocked">0</span></p>
+    <p>Reward owed: <span id="rewardOwed">-</span></p>
+
+    <h2>Settings</h2>
+
+    <label>Rate (1 THBC = ? KJC):<br />
+      <input id="rate" placeholder="เช่น 1.9" />
+    </label>
+    <button id="btnRate">Update Rate</button>
+
+    <label>APY (%):<br />
+      <input id="apy" placeholder="เช่น 15" />
+    </label>
+    <button id="btnApy">Update APY</button>
+
+    <label>Lock Duration (days):<br />
+      <input id="days" placeholder="เช่น 365" />
+    </label>
+    <button id="btnLock">Update Lock</button>
+
+    <h2>Withdraw THBC</h2>
+    <p class="muted">ดึง THBC ทั้งหมดกลับเข้ากระเป๋า Owner</p>
+    <button id="btnWithdrawThbc">Withdraw ALL THBC to Owner</button>
+
+    <p id="txMessage" class="msg"></p>
+  </div>
+
+  <!-- ethers.js -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <!-- config -->
+  <script src="config.js"></script>
+
+  <!-- admin logic -->
+  <script src="admin.js"></script>
+</body>
+</html>
